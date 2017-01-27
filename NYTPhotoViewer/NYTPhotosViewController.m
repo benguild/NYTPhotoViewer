@@ -378,7 +378,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     [self.notificationCenter postNotificationName:NYTPhotoViewControllerPhotoImageUpdatedNotification object:photo];
 
-    if (self.currentlyDisplayedPhoto == photo) {
+    if ([self.currentlyDisplayedPhoto isEqual:photo]) {
         [self updateOverlayInformation];
     }
 }
@@ -473,7 +473,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         return;
     }
 
-    if (viewController.photo == self.currentlyDisplayedPhoto) {
+    if ([viewController.photo isEqual:self.currentlyDisplayedPhoto]) {
         animated = NO;
     }
 
